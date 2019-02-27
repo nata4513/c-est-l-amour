@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C'est l'amour</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Forside</title>
-
 
     <style>
         h1 {
@@ -19,122 +17,89 @@
             font-family: "Roboto";
         }
 
+
         body {
-            background-image: url(billeder/baggrund1.png);
-            background-size: 100%;
-            width: 100%;
-            height: 100%;
             margin: 0;
         }
 
-        #logo {
-            background-image: url(billeder/logo.svg);
-            background-size: 100%;
-            width: 25vw;
-            height: 25vw;
-            position: absolute;
-            background-repeat: no-repeat;
-            left: 38vw;
-        }
 
 
-        #menu {
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            margin: 0 auto;
-            width: 90%;
-            text-align: center;
-            padding-top: 100px;
-            font-family: "Roboto";
-        }
-
-        #menu a {
-            color: black;
-            text-decoration: none;
-            font-size: 24px;
-            padding: 10px;
-            font-family: "Roboto";
-        }
-
-
-        #menu a:hover {
-            color: #f98f8f;
-        }
-
-
-
-        #footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 50px;
-            background-color: #FAD4D9;
-            text-align: center;
-            margin-top: 50px;
-            color: white;
-            text-align: left;
-        }
-
-
-
-        #some {
-            position: fixed;
-            top: 94%;
-            left: 43%;
-            color: white;
+            background-color: #333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 55px;
             font-size: 25px;
         }
 
-
-        .fa-facebook {
-            color: white;
-            padding-left: 10px;
-            text-decoration: none;
+        li {
+            float: left;
         }
 
-        .fa-instagram {
-            color: white;
-            padding-left: 10px;
+        li a {
+            display: block;
+            color: #FAD4D9;
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
+            font-family: "Roboto Mono";
         }
+
+        li a:hover {
+            color: #D3D7E6;
+        }
+
+        .logo {
+            background-image: url(billeder/logo.svg);
+            background-size: 100%;
+            width: 15vw;
+            height: 20vw;
+            position: absolute;
+            background-repeat: no-repeat;
+            left: 80vw;
+            z-index: 1;
+        }
+
+
 
 
         @media only screen and (min-width: 768px) {
-            #menu {
-                padding-top: 150px;
-                font-size: 50px;
+
+
+            .logo {
+                width: 8vw;
+                height: 8vw;
+                position: absolute;
+                background-repeat: no-repeat;
+                left: 88vw;
+                z-index: 1;
             }
-
-
-            #some {
-                left: 46%;
-            }
-
 
         }
 
 
         @media only screen and (min-width: 1024px) {
-            #logo {
-                width: 15vw;
-                height: 15vw;
-                left: 42vw;
-            }
-
-            #menu {
-                padding-top: 140px;
-            }
-
-
-            #some {
-                left: 46%;
+            .logo {
+                width: 4.5vw;
+                height: 4.5vw;
+                position: absolute;
+                background-repeat: no-repeat;
+                left: 93vw;
+                z-index: 1;
             }
         }
 
 
 
-        /******************menukort**********************/
 
+
+        /******************menukort****************/
         img {
             max-width: 100%;
             width: 300px;
@@ -171,6 +136,32 @@
             text-align: center;
         }
 
+        #button,
+        #button1,
+        #button2,
+        #button3,
+        #button4 {
+            background-color: #D3D7E6;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #button:hover,
+        #button1:hover,
+        #button2:hover,
+        #button3:hover,
+        #button4:hover {
+            background-color: #FAD4D9;
+        }
+
+
         h1,
         h3,
         p {
@@ -197,7 +188,6 @@
 
         #indhold {
             min-height: 50vh;
-            background-color: white;
             width: 70vw;
             margin: 8rem auto;
         }
@@ -213,22 +203,26 @@
             padding: 1rem 2rem;
             background-color: #FAD4D9;
         }
-    </style>
 
+        #luk button:hover {
+            background-color: #D3D7E6;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <top>
-        <div id="logo"></div>
 
-        <div id="menu">
-            <a href="forside.html">Home</a>
-            <a href="menukort.html">Menukort</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
+        <ul>
+            <div class="logo"></div>
+            <li><a href="forside.html">Home</a></li>
+            <li><a href="menukort.html">Menu</a></li>
+            <li><a href="forside.html">Kontakt</a></li>
+        </ul>
     </top>
-
+    <div class="baggrund"></div>
     <div id="popup">
         <div id="luk">
             <button>X</button>
@@ -239,12 +233,11 @@
     <h1>Menukort</h1>
 
     <nav class="menu">
-        <button class="filter valgt" data-hold="alle">Alle</button>
-        <button class="filter" data-hold="forretter">Forretter</button>
-        <button class="filter" data-hold="hovedretter">Hovedretter</button>
-        <button class="filter" data-hold="desserter">Desserter</button>
-        <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
-
+        <button id="button" class="filter valgt" data-hold="alle">Alle</button>
+        <button id="button1" class="filter" data-hold="forretter">Forretter</button>
+        <button id="button2" class="filter" data-hold="hovedretter">Hovedretter</button>
+        <button id="button3" class="filter" data-hold="desserter">Desserter</button>
+        <button id="button4" class="filter" data-hold="drikkevarer">Drikkevarer</button>
     </nav>
 
 
@@ -253,14 +246,7 @@
 
 
 
-    <footer>
-        <div id="footer">
-            <div id="some">
-                <a class="fa fa-facebook"></a>
-                <a class="fa fa-instagram"></a>
-            </div>
-        </div>
-    </footer>
+
 
     <script>
         let menuKort = [];
@@ -286,7 +272,7 @@
                     if (filter == "alle" || filter == ret.kategori) {
                         let template =
                             `<article class="ret">
-                                <img src="billeder/mad1/${ret.billede}.jpg" alt="${ret.navn}">
+                                <img src="billeder/mad3/${ret.billede}.jpg" alt="${ret.navn}">
                                 <h1>${ret.navn}</h1>
                                 <p>${ret.pris} kr</p>
                             </article>
@@ -299,7 +285,7 @@
                         function visSingle() {
                             document.querySelector("#indhold").innerHTML = `
                                 <article class="ret">
-                                    <img src="billeder/mad1/${ret.billede}.jpg" alt="${ret.navn}">
+                                    <img src="billeder/mad3/${ret.billede}.jpg" alt="${ret.navn}">
                                     <h1>${ret.navn}</h1>
                                     <h3>${ret.kort}</h3>
                                     <p>${ret.pris} kr</p>
@@ -333,6 +319,7 @@
             }
 
         }
+
     </script>
 </body>
 
